@@ -4,9 +4,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "keystone-next dev",
-    "dev:site": "next dev -p 3001",
-    "start": "keystone-next start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"keystone-next start\" \"next dev -p 3001\"",
     "build": "keystone-next build"
   },
   "dependencies": {
@@ -14,6 +13,7 @@
     "@keystone-next/fields-document": "^11.0.0",
     "@keystone-next/keystone": "^26.1.0",
     "@preconstruct/next": "^3.0.0",
+    "concurrently": "^6.3.0",
     "next": "^11.1.0",
     "react": "^17.0.2"
   },
@@ -21,7 +21,7 @@
     "typescript": "^4.4.4"
   },
   "engines": {
-    "node": "^14.18.1"
+    "node": "^12.20 || >= 14.13"
   },
   "repository": "https://github.com/keystonejs/keystone/tree/main/examples/document-field"
 }
